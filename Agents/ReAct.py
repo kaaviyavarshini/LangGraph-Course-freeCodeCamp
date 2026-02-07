@@ -48,6 +48,8 @@ def model_call(state:AgentState) -> AgentState:
 def should_continue(state: AgentState): 
     messages = state["messages"]
     last_message = messages[-1]
+    #we'll see if there are any tool calls required for the messages if so 
+    #we'll (run the else cond.) "continue"
     if not last_message.tool_calls: 
         return "end"
     else:
