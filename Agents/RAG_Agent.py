@@ -175,7 +175,7 @@ def running_agent():
         user_input = input("\nWhat is your question: ")
         if user_input.lower() in ['exit', 'quit']:
             break
-            
+        #converts the user_input to the human message type    
         messages = [HumanMessage(content=user_input)] # converts back to a HumanMessage type
 
         result = rag_agent.invoke({"messages": messages})
